@@ -1,6 +1,6 @@
 import './style.css'
 
-// Obtener el formulario de inicio de sesión
+// Obtener el formulario de registro
 const registerForm = document.getElementById('register-form')
 
 registerForm.addEventListener('submit', async (e) => {
@@ -25,7 +25,7 @@ registerForm.addEventListener('submit', async (e) => {
     if (response.ok) {
       window.location.href = '/'
     } else {
-      return
+      response.status(500).json({ message: 'Error' })
     }
   })
 })
